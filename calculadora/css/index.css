@@ -1,0 +1,35 @@
+.caixa{
+    width: 92px;
+    height: 105px;
+    background-color: red;
+    padding: 20px;
+    margin: 20px auto;
+}
+
+button{
+    height: 21px;
+    width: 23px;
+    border-radius: 0;
+    margin-right: -4px;
+}
+
+button:hover{
+    background-color: rgb(133, 133, 133);
+}
+
+input{
+    height: 15px;
+    width: 61px;
+    border-radius: 0;
+    background-color: #fff;
+    opacity: 1;
+    font-size: 10px;
+}
+
+.ce{
+    width: 23;
+    height: 21;
+    margin-left: -4px;
+    font-size: 10px;
+    padding: 0px;
+}
