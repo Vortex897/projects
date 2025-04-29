@@ -1,52 +1,60 @@
-function pegarDado(id) {
+function linkarDado(id) {
     let input = document.querySelector(id);
-    let dado = input.label;
-    return dado;
+    return input.value;
 }
 
 function validarDado(dado, minimo) {
-    if (dado.length >= minimo) {
-        return true;
-    } else {
-        return false;
-    }
+    return dado.length >= minimo;
 }
 
 function confirmarSenha(senha, confirmSenha) {
-    if (senha == confirmSenha) {
-        return true;
-    } else {
-        return false;
-    }
+    return senha === confirmSenha;
 }
 
 function validarEmail(email) {
     let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!regexEmail.test(email.value)) {
-        return true;
-    } else {
-        return false;
-    }
+    return regexEmail.test(email);
 }
 
-function cadastrar(usuario, email, senha, confirmSenha){
-    if (usuario, email, senha, confirmSenha == true){
+function cadastrar() {
+    let usuario = linkarDado('#usuario');
+    let email = linkarDado('#email');
+    let senha = linkarDado('#senha');
+    let confirmSenha = linkarDado('#confirmSenha');
+
+    let validUsuario = validarDado(usuario, 4);
+    let validEmail = validarEmail(email);
+    let validSenha = validarDado(senha, 8);
+    let validConfirmSenha = confirmarSenha(senha, confirmSenha);
+
+    if (validUsuario && validEmail && validSenha && validConfirmSenha) {
         setTimeout(() => {
             window.location.href = '/index.html';
         }, 1000);
+    } else {
+        console.log("Erro: dados inválidos.");
     }
 }
 
-let usuario = pegarDado('#usuario');
-let validUsuario = validarDado(usuario);
+let verSenha = document.querySelector('#verSenha');
+let verConfirmSenha = document.querySelector('#verConfirmSenha');
 
-let email = pegarDado("email");
-let validEmail = validarEmail(email);
+verSenha.addEventListener('click', () => {
+    let inputSenha = document.querySelector('#senha');
 
-let senha = pegarDado('#senha');
-let validSenha = validarDado(senha);
+    if (inputSenha.getAttribute('type') === 'password') {
+        inputSenha.setAttribute('type', 'text');
+    } else {
+        inputSenha.setAttribute('type', 'password');
+    }
+});
 
-let confirmSenha = pegarDado('#confirmSenha');
-let validConfirmSenha = confirmarSenha(senha,confirmSenha);
+verConfirmSenha.addEventListener('click', () => {
+    let inputConfirmSenha = document.querySelector('#confirmSenha');
 
-
+    if (inputConfirmSenha.getAttribute('type') === 'password') {
+        inputConfirmSenha.setAttribute('type', 'text');
+    } else {
+        inputConfirmSenha.setAttribute('type', 'password');
+    }
+});
