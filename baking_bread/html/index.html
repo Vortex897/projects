@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baking Bread</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div id="info">
+        <p id="money">Money: 100</p>
+        <button onclick="toggleInventory()">Inventory</button>
+        <div id="inventory" style="display: none;"></div>
+
+        <br>
+
+        <button onclick="openStore()">Store</button>
+
+        <br>
+
+        <button id="itensStore" onclick="openItensStore()" style="display: none;">Itens Store</button>
+        <div id="itensStoreDiv" style="display: none;"></div>
+        
+        <button id="toolsStore" style="display: none;">Tools Store</button>
+        
+        
+        <button id="sell" style="display: none;">Sell</button>
+
+        <br>
+    </div>
+
+    <button id="buyGardenBtn" style="display: block" onclick="buyGarden()">Buy Garden</button>
+
+    <p id="gardenName" style="display: none"></p>
+
+
+    <script src="../js/script.js"></script>
+    <script src="../js/structures.js"></script>
+    <script src="../js/inventory.js"></script>
+    <script src="../js/store.js"></script>
+</body>
+</html>
